@@ -1,3 +1,10 @@
+
+
+<video src="
+https://github.com/user-attachments/assets/3305de79-ae41-4475-a4f1-2d23a2a0e89d
+" controls width="100%"></video>
+
+
 # LMClibot
 
 **Ton agent IA personnel, qui pilote Claude Code pour toi.**
