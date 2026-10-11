@@ -1,6 +1,6 @@
 
 
-<video src="https://github.com/user-attachments/assets/084c9ce3-e4ba-46b4-aa1a-32705d4b333a"></video>
+<video src='[your URL here](https://github.com/user-attachments/assets/084c9ce3-e4ba-46b4-aa1a-32705d4b333a")' width=100%/>></video>
 
 
 # LMClibot
