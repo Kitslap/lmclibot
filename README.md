@@ -1,6 +1,6 @@
 
 
-<video src="https://github.com/user-attachments/assets/084c9ce3-e4ba-46b4-aa1a-32705d4b333a" controls width="100%"></video>
+<video src="https://github.com/user-attachments/assets/084c9ce3-e4ba-46b4-aa1a-32705d4b333a"></video>
 
 
 # LMClibot
