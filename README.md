@@ -1,7 +1,5 @@
 # LMClibot
 
-<video src='https://github.com/user-attachments/assets/709a0ffd-c209-4ac4-86d1-915bbe76ca53' width=100%/>></video>
-
 **Ton agent IA de bureau, qui pilote Claude Code ou GitHub Copilot CLI pour toi.**
 
 LMClibot est un petit robot qui flotte au-dessus de ton bureau Windows. Tu lui confies une tâche dans
@@ -29,6 +27,8 @@ avis avant de s'exécuter. Toute la puissance de l'agent, sans le terminal.
 - **Mode présentation.** L'agent répond en slides HTML, ouvertes dans une visionneuse, avec un
   questionnaire final pour lui renvoyer tes décisions.
 - **Thème clair, sombre ou celui de Windows**, choisi à l'installation et modifiable dans Réglages.
+- **Interface en français ou en anglais** (*French or English interface*), par défaut celle de Windows, modifiable
+  dans Réglages. Tout ce que LMClibot affiche ou envoie à l'agent suit ce choix.
 
 ## Claude Code et GitHub Copilot CLI
 
