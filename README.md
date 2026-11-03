@@ -1,130 +1,126 @@
+**English** · [Français](README.fr.md)
+
 # LMClibot
 
-**Ton agent IA de bureau, qui pilote Claude Code ou GitHub Copilot CLI pour toi.**
+**Your desktop AI agent, driving Claude Code or GitHub Copilot CLI for you.**
 
-LMClibot est un petit robot qui flotte au-dessus de ton bureau Windows. Tu lui confies une tâche dans
-sa bulle : il la fait exécuter par l'agent en ligne de commande que tu utilises déjà (Claude Code ou
-GitHub Copilot CLI), te montre la réponse au fil de l'eau, et t'arrête quand une commande mérite ton
-avis avant de s'exécuter. Toute la puissance de l'agent, sans le terminal.
+LMClibot is a small robot that floats above your Windows desktop. You give it a task in its bubble: it has
+the command-line agent you already use (Claude Code or GitHub Copilot CLI) carry it out, shows you the answer
+as it comes, and stops you when a command deserves your say before it runs. All the power of the agent,
+without the terminal.
 
-> Ce dépôt ne contient que les **versions compilées** (onglet *Releases*). LMClibot est gratuit,
-> mais son code source n'est pas publié.
+> This repository only holds the **compiled releases** (*Releases* tab). LMClibot is free, but its source
+> code is not published.
 
-## Ce que LMClibot permet de faire
+## What LMClibot lets you do
 
-- **Parler à ton agent depuis une bulle.** Réponse en direct, outils utilisés visibles, captures
-  d'écran et fichiers à joindre, file de messages pendant que l'agent travaille, bouton Stop.
-- **Garder plusieurs sessions.** La fenêtre Sessions liste tes conversations, les retrouve par
-  recherche et les reprend là où tu les avais laissées. Chaque robot a sa couleur ; « Nouvel
-  orchestrateur » ouvre un robot de plus pour mener deux chantiers en parallèle.
-- **Mode agent.** Une tâche longue est découpée en secteurs confiés à des sous-agents (des
-  mini-robots apparaissent autour de la tête), puis relue avant de t'être rendue.
-- **Choisir ce que l'agent voit.** Menus des sous-agents, des serveurs MCP, des skills et du modèle,
-  directement dans la bulle. Chaque case décochée est une vraie restriction pour l'agent.
-- **Mode auto, avec garde-fou.** L'agent enchaîne sans te demander, mais les commandes dangereuses
-  (suppressions récursives, `git push --force`, `git reset --hard`, formatage d'un disque, `DROP
-  TABLE`…) sont bloquées et te sont soumises.
-- **Mode présentation.** L'agent répond en slides HTML, ouvertes dans une visionneuse, avec un
-  questionnaire final pour lui renvoyer tes décisions.
-- **Thème clair, sombre ou celui de Windows**, choisi à l'installation et modifiable dans Réglages.
-- **Interface en français ou en anglais** (*French or English interface*), par défaut celle de Windows, modifiable
-  dans Réglages. Tout ce que LMClibot affiche ou envoie à l'agent suit ce choix.
+- **Talk to your agent from a bubble.** Live answers, the tools being used, screenshots and files to attach,
+  a message queue while the agent works, a Stop button.
+- **Keep several sessions.** The Sessions window lists your conversations, finds them by search and resumes
+  them where you left off. Each robot has its own color; "New Orchestrator" opens one more robot to run two
+  jobs side by side.
+- **Agent mode.** A long task is split into sectors handed to sub-agents (mini-robots appear around the
+  head), then reviewed before it comes back to you.
+- **Choose what the agent sees.** Menus for sub-agents, MCP servers, skills and the model, right in the
+  bubble. Every unchecked box is a real restriction for the agent.
+- **Auto mode, with a guard.** The agent keeps going without asking, but dangerous commands (recursive
+  deletes, `git push --force`, `git reset --hard`, disk formatting, `DROP TABLE`…) are blocked and brought
+  to you.
+- **Presentation mode.** The agent answers with HTML slides, opened in a viewer, with a final questionnaire
+  to send your decisions back.
+- **Light, dark or Windows theme**, chosen at setup and changeable in Settings.
+- **English or French interface**, following Windows by default, changeable in Settings. Everything
+  LMClibot shows or sends to the agent follows that choice.
 
-## Claude Code et GitHub Copilot CLI
+## Claude Code and GitHub Copilot CLI
 
-LMClibot n'a aucune intelligence propre et ne demande aucune clé d'API : il pilote un agent déjà
-installé et connecté sur ton poste. Au premier lancement, il détecte les deux ; tu choisis ensuite
-le moteur de chaque **nouvelle** session dans la fenêtre Sessions (bouton « Moteur »). Une session
-garde toujours son moteur.
+LMClibot has no intelligence of its own and asks for no API key: it drives an agent already installed and
+signed in on your machine. At first launch it detects both; you then pick the engine of each **new** session
+in the Sessions window ("Engine" button). A session always keeps its engine.
 
 | | Claude Code | GitHub Copilot CLI |
 |---|---|---|
-| Bulle, sessions, reprise, Stop | oui | oui |
-| Mode agent et sous-agents | oui | oui |
-| Serveurs MCP ajoutés dans LMClibot | oui | oui |
-| Skills | oui | oui : les siens, et tes skills Claude cochés |
-| Mode auto avec garde-fou | oui | oui |
-| Mode présentation | oui | oui |
-| Dispatch vers le téléphone, catalogues de greffons, connecteurs claude.ai | oui | non (propres à Claude Code) |
+| Bubble, sessions, resume, Stop | yes | yes |
+| Agent mode and sub-agents | yes | yes |
+| MCP servers added in LMClibot | yes | yes |
+| Skills | yes | yes: its own, plus your checked Claude skills |
+| Auto mode with guard | yes | yes |
+| Presentation mode | yes | yes |
+| Dispatch to your phone, plugin catalogs, claude.ai connectors | yes | no (specific to Claude Code) |
 
-## Prérequis
+## Requirements
 
-- Windows 10 ou 11 (64 bits). WebView2 est installé par l'installeur s'il manque.
-- Au moins un des deux agents, installé et connecté à ton compte :
-  - [Claude Code](https://docs.anthropic.com/claude-code) (compte Anthropic) ;
-  - [GitHub Copilot CLI](https://docs.github.com/copilot) : `npm install -g @github/copilot`, puis
-    `copilot login` (un abonnement Copilot, y compris gratuit, suffit).
+- Windows 10 or 11 (64-bit). The installer adds WebView2 if it is missing.
+- At least one of the two agents, installed and signed in to your account:
+  - [Claude Code](https://docs.anthropic.com/claude-code) (Anthropic account);
+  - [GitHub Copilot CLI](https://docs.github.com/copilot): `npm install -g @github/copilot`, then
+    `copilot login` (any Copilot plan, the free one included, is enough).
 
-## Installer
+## Install
 
-1. Télécharge `LMClibot-<version>-setup.exe` dans la dernière *Release* (installation sans droits
-   administrateur), ou `LMClibot-<version>-portable.exe` pour l'exécuter sans installation.
-   Télécharge aussi `SHA256SUMS.txt`, et `SHA256SUMS.txt.sig` si tu veux vérifier la signature.
-2. Vérifie le fichier (voir ci-dessous).
-3. Le binaire n'est pas encore signé par un certificat de code : Windows SmartScreen peut afficher
-   « Windows a protégé votre ordinateur ». Clique sur *Informations complémentaires › Exécuter
-   quand même* si la vérification est bonne.
+1. Download `LMClibot-<version>-setup.exe` from the latest *Release* (installs without administrator
+   rights), or `LMClibot-<version>-portable.exe` to run it without installing.
+   Also download `SHA256SUMS.txt`, and `SHA256SUMS.txt.sig` if you want to check the signature.
+2. Check the file (see below).
+3. The binary is not signed with a code-signing certificate yet: Windows SmartScreen may show "Windows
+   protected your PC". Click *More info › Run anyway* if the check passed.
 
-## Vérifier ton téléchargement
+## Check your download
 
-### 1. L'empreinte (le fichier est intact)
+### 1. The checksum (the file is intact)
 
-Dans PowerShell, dans le dossier où tu as téléchargé les fichiers :
+In PowerShell, in the folder where you downloaded the files:
 
 ```powershell
-$f = "LMClibot-1.0.0-setup.exe"   # le fichier téléchargé
-$attendu = (Get-Content SHA256SUMS.txt | Where-Object { $_ -like "*  $f" }).Split(" ")[0]
-(Get-FileHash $f -Algorithm SHA256).Hash -eq $attendu
+$f = "LMClibot-1.1.1-setup.exe"   # the downloaded file
+$expected = (Get-Content SHA256SUMS.txt | Where-Object { $_ -like "*  $f" }).Split(" ")[0]
+(Get-FileHash $f -Algorithm SHA256).Hash -eq $expected
 ```
 
-`True` : le fichier est exactement celui qui a été publié. `False` : ne l'exécute pas, retélécharge-le.
+`True`: the file is exactly the one that was published. `False`: do not run it, download it again.
 
-### 2. La signature (il vient bien de l'auteur)
+### 2. The signature (it really comes from the author)
 
-L'empreinte prouve que le fichier est intact, pas qui l'a publié. `SHA256SUMS.txt.sig` est une
-signature Ed25519 de la version et de `SHA256SUMS.txt`, faite avec la clé de publication de
-LMClibot. Pour la vérifier, il faut OpenSSL 3 (fourni avec
-[Git pour Windows](https://git-scm.com/download/win)) :
+The checksum proves the file is intact, not who published it. `SHA256SUMS.txt.sig` is an Ed25519 signature
+of the version and of `SHA256SUMS.txt`, made with LMClibot's publishing key. Checking it needs OpenSSL 3
+(shipped with [Git for Windows](https://git-scm.com/download/win)):
 
 ```powershell
-$v = "1.0.0"   # la version téléchargée, sans le « v »
+$v = "1.1.1"   # the downloaded version, without the "v"
 "-----BEGIN PUBLIC KEY-----`nMCowBQYDK2VwAyEA/ocxSvM6vVUpPxIejFpi1EAH2dZd8srOz8jTXK95+Bo=`n-----END PUBLIC KEY-----" |
-  Set-Content -Encoding ascii cle-lmclibot.pem
+  Set-Content -Encoding ascii lmclibot-key.pem
 [byte[]]$m = [Text.Encoding]::ASCII.GetBytes("lmclibot $v`n") + [IO.File]::ReadAllBytes("$PWD\SHA256SUMS.txt")
 [IO.File]::WriteAllBytes("$PWD\message.bin", $m)
 [IO.File]::WriteAllBytes("$PWD\signature.bin", [Convert]::FromBase64String((Get-Content SHA256SUMS.txt.sig -Raw).Trim()))
-& "C:\Program Files\Git\usr\bin\openssl.exe" pkeyutl -verify -pubin -inkey cle-lmclibot.pem -rawin -in message.bin -sigfile signature.bin
+& "C:\Program Files\Git\usr\bin\openssl.exe" pkeyutl -verify -pubin -inkey lmclibot-key.pem -rawin -in message.bin -sigfile signature.bin
 ```
 
-`Signature Verified Successfully` : les empreintes viennent bien de l'auteur, pour cette version.
-Fais ensuite l'étape 1 : les deux ensemble prouvent que ton fichier est authentique.
+`Signature Verified Successfully`: the checksums really come from the author, for this version. Then do
+step 1: together, the two prove your file is genuine.
 
-## Mises à jour
+## Updates
 
-LMClibot se met à jour tout seul : il vérifie les versions publiées ici au démarrage puis toutes
-les 24 h, télécharge la nouvelle en arrière-plan et l'installe quand tu le fermes. La fenêtre
-**À propos** (menu du robot ou de l'icône près de l'horloge) affiche ta version, propose
-« Mettre à jour maintenant » et permet de couper les mises à jour automatiques.
+LMClibot updates itself: it checks the versions published here at startup and then every 24 h, downloads
+the new one in the background and installs it when you close the app. The **About** window (robot menu or
+the icon near the clock) shows your version, offers "Update now" and lets you turn automatic updates off.
 
-L'app fait elle-même les deux vérifications ci-dessus avant toute mise à jour, avec la clé de
-publication qu'elle embarque : une version dont la signature ne correspond pas est refusée.
+The app runs both checks above itself before any update, with the publishing key it carries: a version
+whose signature does not match is refused.
 
-## Sécurité
+## Security
 
-Chaque version est construite depuis les sources par une intégration continue, puis analysée par
-Trivy (dépendances, binaire, secrets) et govulncheck (bibliothèque standard Go). Aucune version
-n'est publiée avec une vulnérabilité HIGH ou CRITICAL corrigeable. La nomenclature logicielle
-(SBOM CycloneDX) est jointe à chaque version.
+Every release is built from source by continuous integration, then scanned by Trivy (dependencies, binary,
+secrets) and govulncheck (Go standard library). No release ships with a fixable HIGH or CRITICAL
+vulnerability. The software bill of materials (CycloneDX SBOM) is attached to every release.
 
-LMClibot fonctionne localement et n'envoie aucune donnée à son auteur. Tes messages ne passent que
-par l'agent que tu as choisi. Seule la vérification des mises à jour contacte github.com
-(désactivable).
+LMClibot runs locally and sends no data to its author. Your messages only go through the agent you chose.
+Only the update check contacts github.com (can be turned off).
 
-## Licence et mentions
+## License and notices
 
-Gratuiciel, tous droits réservés : voir `LICENCE.txt` dans chaque version. Composants tiers :
+Freeware, all rights reserved: see `LICENCE.txt` in each release. Third-party components:
 `THIRD-PARTY-NOTICES.txt`.
 
-LMClibot est un outil indépendant, **non affilié à Anthropic ni à GitHub**, ni approuvé par eux.
-« Claude » et « Claude Code » sont des marques d'Anthropic, PBC. « GitHub » et « GitHub Copilot »
-sont des marques de GitHub, Inc.
+LMClibot is an independent tool, **not affiliated with Anthropic or GitHub**, nor endorsed by them.
+"Claude" and "Claude Code" are trademarks of Anthropic, PBC. "GitHub" and "GitHub Copilot" are trademarks
+of GitHub, Inc.
