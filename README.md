@@ -4,6 +4,8 @@
 
 **Your desktop AI agent, driving Claude Code or GitHub Copilot CLI for you.**
 
+<video src='https://github.com/user-attachments/assets/0ce86f19-9069-4f1d-b7b6-b9051f047da7' width=100%/>></video>
+
 LMClibot is a small robot that floats above your Windows desktop. You give it a task in its bubble: it has
 the command-line agent you already use (Claude Code or GitHub Copilot CLI) carry it out, shows you the answer
 as it comes, and stops you when a command deserves your say before it runs. All the power of the agent,
