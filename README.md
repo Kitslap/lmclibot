@@ -2,8 +2,6 @@
 
 # LMClibot
 
-<video src='https://github.com/user-attachments/assets/0ce86f19-9069-4f1d-b7b6-b9051f047da7' width=100%/>></video>
-
 **Your desktop AI agent, driving Claude Code or GitHub Copilot CLI for you.**
 
 LMClibot is a small robot that floats above your Windows desktop. You give it a task in its bubble: it has
