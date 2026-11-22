@@ -2,6 +2,8 @@
 
 # LMClibot
 
+<video src='https://github.com/user-attachments/assets/709a0ffd-c209-4ac4-86d1-915bbe76ca53' width=100%/>></video>
+
 **Ton agent IA de bureau, qui pilote Claude Code ou GitHub Copilot CLI pour toi.**
 
 LMClibot est un petit robot qui flotte au-dessus de ton bureau Windows. Tu lui confies une tâche dans
