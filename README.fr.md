@@ -74,7 +74,8 @@ garde toujours son moteur.
 Dans PowerShell, dans le dossier où tu as téléchargé les fichiers :
 
 ```powershell
-$f = "LMClibot-1.1.1-setup.exe"   # le fichier téléchargé
+$v = "X.Y.Z"   # la version téléchargée, sans le « v » (remplace X.Y.Z)
+$f = "LMClibot-$v-setup.exe"   # le fichier téléchargé
 $attendu = (Get-Content SHA256SUMS.txt | Where-Object { $_ -like "*  $f" }).Split(" ")[0]
 (Get-FileHash $f -Algorithm SHA256).Hash -eq $attendu
 ```
@@ -89,7 +90,7 @@ LMClibot. Pour la vérifier, il faut OpenSSL 3 (fourni avec
 [Git pour Windows](https://git-scm.com/download/win)) :
 
 ```powershell
-$v = "1.1.1"   # la version téléchargée, sans le « v »
+# $v est la version posée à l'étape 1
 "-----BEGIN PUBLIC KEY-----`nMCowBQYDK2VwAyEA/ocxSvM6vVUpPxIejFpi1EAH2dZd8srOz8jTXK95+Bo=`n-----END PUBLIC KEY-----" |
   Set-Content -Encoding ascii cle-lmclibot.pem
 [byte[]]$m = [Text.Encoding]::ASCII.GetBytes("lmclibot $v`n") + [IO.File]::ReadAllBytes("$PWD\SHA256SUMS.txt")
@@ -116,7 +117,9 @@ publication qu'elle embarque : une version dont la signature ne correspond pas e
 Chaque version est construite depuis les sources par une intégration continue, puis analysée par
 Trivy (dépendances, binaire, secrets) et govulncheck (bibliothèque standard Go). Aucune version
 n'est publiée avec une vulnérabilité HIGH ou CRITICAL corrigeable. La nomenclature logicielle
-(SBOM CycloneDX) est jointe à chaque version.
+(SBOM CycloneDX) est jointe à chaque version, avec nos propres rapports d'analyse du binaire
+(`LMClibot-<version>-trivy.json`, `LMClibot-<version>-govulncheck.txt`) : une analyse externe de l'exe
+portable seul n'énumère rien. Voir [SECURITY.md](SECURITY.md) pour signaler une vulnérabilité.
 
 LMClibot fonctionne localement et n'envoie aucune donnée à son auteur. Tes messages ne passent que
 par l'agent que tu as choisi. Seule la vérification des mises à jour contacte github.com
