@@ -72,7 +72,8 @@ in the Sessions window ("Engine" button). A session always keeps its engine.
 In PowerShell, in the folder where you downloaded the files:
 
 ```powershell
-$f = "LMClibot-1.1.1-setup.exe"   # the downloaded file
+$v = "X.Y.Z"   # the downloaded version, without the "v" (replace X.Y.Z)
+$f = "LMClibot-$v-setup.exe"   # the downloaded file
 $expected = (Get-Content SHA256SUMS.txt | Where-Object { $_ -like "*  $f" }).Split(" ")[0]
 (Get-FileHash $f -Algorithm SHA256).Hash -eq $expected
 ```
@@ -86,7 +87,7 @@ of the version and of `SHA256SUMS.txt`, made with LMClibot's publishing key. Che
 (shipped with [Git for Windows](https://git-scm.com/download/win)):
 
 ```powershell
-$v = "1.1.1"   # the downloaded version, without the "v"
+# $v is the version set in step 1
 "-----BEGIN PUBLIC KEY-----`nMCowBQYDK2VwAyEA/ocxSvM6vVUpPxIejFpi1EAH2dZd8srOz8jTXK95+Bo=`n-----END PUBLIC KEY-----" |
   Set-Content -Encoding ascii lmclibot-key.pem
 [byte[]]$m = [Text.Encoding]::ASCII.GetBytes("lmclibot $v`n") + [IO.File]::ReadAllBytes("$PWD\SHA256SUMS.txt")
@@ -111,7 +112,10 @@ whose signature does not match is refused.
 
 Every release is built from source by continuous integration, then scanned by Trivy (dependencies, binary,
 secrets) and govulncheck (Go standard library). No release ships with a fixable HIGH or CRITICAL
-vulnerability. The software bill of materials (CycloneDX SBOM) is attached to every release.
+vulnerability. The software bill of materials (CycloneDX SBOM) is attached to every release, along with our
+own scan reports of the binary (`LMClibot-<version>-trivy.json`, `LMClibot-<version>-govulncheck.txt`):
+an external scan of the portable exe alone lists nothing. See [SECURITY.md](SECURITY.md) to report a
+vulnerability.
 
 LMClibot runs locally and sends no data to its author. Your messages only go through the agent you chose.
 Only the update check contacts github.com (can be turned off).
